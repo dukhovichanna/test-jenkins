@@ -1,0 +1,82 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                {% if object.author == user %}
+                <div>
+                  <a class="btn btn-secondary btn-sm mt-1 mb-2" href="{% url 'post-update' object.id %}">Update</a>
+                  <a class="btn btn-danger btn-sm mt-1 mb-2" href="{% url 'post-delete' object.id %}">Delete</a>
+                </div>
+                {% endif %}
+            </div>
+            <h2 class="article-title">{{ object.title }}</h2>
+            <p class="article-content">{{ object.content }}</p>
+            <div class="gallery">
+                <div>
+                {% if object.image1.url is not Null%}
+                {{ object.caption1 }}
+                <img src="{{ object.image1.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image2.url is not Null%}
+                {{ object.caption2 }}
+                <img src="{{ object.image2.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image3.url is not Null%}
+                {{ object.caption3 }}
+                <img src="{{ object.image3.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image4.url is not Null%}
+                {{ object.caption4 }}
+                <img src="{{ object.image4.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image5.url is not Null%}
+                {{ object.caption5 }}
+                <img src="{{ object.image5.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image6.url is not Null%}
+                {{ object.caption6 }}
+                <img src="{{ object.image6.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image7.url is not Null%}
+                {{ object.caption7 }}
+                <img src="{{ object.image7.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image8.url is not Null%}
+                {{ object.caption8 }}
+                <img src="{{ object.image8.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image9.url is not Null%}
+                {{ object.caption9 }}
+                <img src="{{ object.image9.url }}">
+                {% endif %}
+                </div>
+                <div>
+                {% if object.image10.url is not Null%}
+                {{ object.caption10 }}
+                <img src="{{ object.image10.url }}">
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </article>
+{% endblock content %}
