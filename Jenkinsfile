@@ -23,6 +23,8 @@ pipeline {
                 echo "branch name - ${BRANCH_NAME}"
                 echo "change branch - ${env.CHANGE_BRANCH}"
                 echo "${BUILD_DISPLAY_NAME}"
+                def featureBranch = env.GIT_BRANCH.replaceAll('origin/','')
+                echo "The feature branch name is ${featureBranch}"
 
             }
         }
