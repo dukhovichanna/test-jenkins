@@ -22,6 +22,7 @@ pipeline {
                 echo "building version ${NEW_VERSION}"
                 echo "branch name - ${BRANCH_NAME}"
                 echo "change branch - ${env.CHANGE_BRANCH}"
+                echo "${BUILD_DISPLAY_NAME}"
 
             }
         }
