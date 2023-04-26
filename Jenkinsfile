@@ -20,7 +20,7 @@ pipeline {
                 echo 'building the application...'
                 echo 'Application built'
                 echo "building version ${NEW_VERSION}"
-                echo "branch name - ${BRANCH}"
+                echo "branch name - ${BRANCH_NAME}"
                 echo "change branch - ${CHANGE_BRANCH}"
 
             }
