@@ -17,7 +17,7 @@ pipeline {
             } */
 
             steps {
-                def featureBranch = env.GIT_BRANCH.replaceAll('origin/','')
+                sh "git fetch origin pull/${env.CHANGE_ID}/head:featureBranch"
                 echo "The feature branch name is ${featureBranch}"
 
             }
