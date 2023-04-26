@@ -3,6 +3,9 @@
 pipeline {
 
     agent any
+    environment {
+        NEW_VERSION = '1.3.0'
+    }
 
     stages {
 
@@ -16,6 +19,9 @@ pipeline {
             steps {
                 echo 'building the application...'
                 echo 'Application built'
+                echo "building version ${NEW_VERSION}"
+                echo "branch name - ${BRANCH}"
+                echo "change branch - ${CHANGE_BRANCH}"
 
             }
         }
