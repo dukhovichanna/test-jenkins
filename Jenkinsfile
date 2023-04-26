@@ -17,12 +17,6 @@ pipeline {
             } */
 
             steps {
-                /* echo 'building the application...'
-                echo 'Application built'
-                echo "building version ${NEW_VERSION}"
-                echo "branch name - ${BRANCH_NAME}"
-                echo "change branch - ${env.CHANGE_BRANCH}"
-                echo "${BUILD_DISPLAY_NAME}" */
                 def featureBranch = env.GIT_BRANCH.replaceAll('origin/','')
                 echo "The feature branch name is ${featureBranch}"
 
