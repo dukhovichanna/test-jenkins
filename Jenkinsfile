@@ -19,7 +19,7 @@ pipeline {
             steps {
                 //echo "${BRANCH}"
                 echo "${BRANCH_NAME}"
-                echo "${CHANGE_BRANCH}"
+                echo "${env.CHANGE_BRANCH}"
 
             }
         }
