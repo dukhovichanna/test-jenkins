@@ -26,7 +26,7 @@ pipeline {
 
             steps {
                 //echo "${BRANCH}"
-                echo BRANCH_NAME}
+                echo BRANCH_NAME
                 echo env.CHANGE_BRANCH
                 sh '''
                     #!bin/bash
