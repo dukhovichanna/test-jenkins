@@ -8,14 +8,14 @@ pipeline {
     }
 
     stages {
-        /* stage('Git Checkout') {
+        stage('Git Checkout') {
             agent any
             steps{
                 script{
                     scmVars checkout scm
                 }
             }
-        } */
+        }
 
         stage("build") {
             /* when{
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 //echo "${BRANCH}"
                 echo BRANCH_NAME
-                echo env.CHANGE_BRANCH
+                sh 'echo $env.CHANGE_BRANCH'
                 sh '''
                     #!bin/bash
                     PR_NUMBER=${CHANGE_ID##*/}
