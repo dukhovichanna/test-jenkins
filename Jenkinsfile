@@ -18,8 +18,15 @@ pipeline {
 
             steps {
                 //echo "${BRANCH}"
-                echo "${BRANCH_NAME}"
-                echo "${env.CHANGE_BRANCH}"
+                //echo "${BRANCH_NAME}"
+                //echo "${env.CHANGE_BRANCH}"
+                sh '''
+                    #!bin/bash
+                    PR_NUMBER=${CHANGE_ID##*/}
+                    API_URL=${CHANGE_URL}/api/json
+                    SOURCE_BRANCH=$(curl -s $API_URL |jq -r ".actions[0].parameters[0].value)
+                    echo "Source branch: $SOURCE_BRANCH"
+                '''
 
             }
         }
