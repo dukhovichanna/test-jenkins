@@ -17,8 +17,9 @@ pipeline {
             } */
 
             steps {
-                sh "git fetch origin pull/${env.CHANGE_ID}/head:featureBranch"
-                echo "The feature branch name is ${featureBranch}"
+                //echo "${BRANCH}"
+                echo "${BRANCH_NAME}"
+                echo "${CHANGE_BRANCH}"
 
             }
         }
